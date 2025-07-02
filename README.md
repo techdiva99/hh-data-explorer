@@ -15,11 +15,11 @@ https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-advanta
 https://data.cms.gov/provider-data/search?theme=Home%20health%20services
 
 Unexplored --
-#HH Provider --
+#HH Provider -- added
 https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/home-health-agency-enrollments
 
-#HH Cost
+#HH Cost-- only 2022 data-- saw a lot of blanks -- added
 https://data.cms.gov/provider-compliance/cost-report/home-health-agency-cost-report
 
-#CMS HH agency program statistics
+#CMS HH agency program statistics -- added -- 2021 data
 https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-service-type-reports/cms-program-statistics-medicare-home-health-agency
