@@ -1,0 +1,11 @@
+{
+  "hhcahps_provider": "data/cms_hh_quality/HHCAHPS_Provider_Apr2025.csv",
+  "hhcahps_state": "data/cms_hh_quality/HHCAHPS_State_Apr2025.csv",
+  "hhcahps_national": "data/cms_hh_quality/HHCAHPS_National_Apr2025.csv",
+  "hh_provider": "data/cms_hh_quality/HH_Provider_Apr2025.csv",
+  "hh_zip": "data/cms_hh_quality/HH_Zip_Apr2025.csv",
+  "zip_county": "data/geo/ZIP_COUNTY_032025.xlsx",
+  "zip_cbsa": "data/geo/ZIP_CBSA_032025.xlsx",
+  "cbsa_fips": "data/geo/cbsa2fipsxw_nber.csv",
+  "medicare_enrollment_potential": "data/market_potential/State_County_Penetration_MA_2025_06.csv"
+}
