@@ -1,3 +1,6 @@
+# For network analysis and visualization
+networkx
+matplotlib
 # For progress bars in scripts
 tqdm
 # For loading environment variables
