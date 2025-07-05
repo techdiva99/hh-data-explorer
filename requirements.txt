@@ -1,2 +1,6 @@
+# For loading environment variables
+python-dotenv
 pandas
 openpyxl
+geopy
+requests

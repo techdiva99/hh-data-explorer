@@ -6,6 +6,8 @@
   "hh_zip": "data/cms_hh_quality/HH_Zip_Apr2025.csv",
   "zip_county": "data/geo/ZIP_COUNTY_032025.xlsx",
   "zip_cbsa": "data/geo/ZIP_CBSA_032025.xlsx",
+  "simplemaps_zip_geo": "data/geo/simplemaps_uszips.xlsx",
   "cbsa_fips": "data/geo/cbsa2fipsxw_nber.csv",
-  "medicare_enrollment_potential": "data/market_potential/State_County_Penetration_MA_2025_06.csv"
+  "state_county_penetration": "data/market_potential/State_County_Penetration_MA_2025_06.csv",
+  "hh_enrollment": "data/hh_enrollment/HHA_Enrollments_Q2_2025.csv"
 }
