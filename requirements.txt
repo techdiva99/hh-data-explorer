@@ -1,3 +1,5 @@
+# For progress bars in scripts
+tqdm
 # For loading environment variables
 python-dotenv
 pandas
