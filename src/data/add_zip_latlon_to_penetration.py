@@ -37,6 +37,7 @@ pen = robust_read_csv(penetration_csv)
 
 zip_latlon = pd.read_excel(zip_latlon_xlsx, dtype=str)
 # Standardize columns and FIPS
+
 zip_latlon = zip_latlon.rename(columns={
     'zip': 'ZIP',
     'lat': 'latitude',
@@ -46,6 +47,8 @@ zip_latlon = zip_latlon.rename(columns={
 if 'county_fips' not in zip_latlon.columns:
     raise ValueError('county_fips column not found in simplemaps ZIP file.')
 zip_latlon['county_fips'] = zip_latlon['county_fips'].astype(str).str.zfill(5)
+# Only keep one lat/lon per county_fips (take first)
+zip_latlon = zip_latlon.drop_duplicates(subset='county_fips', keep='first')
 
 
 

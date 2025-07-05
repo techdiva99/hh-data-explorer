@@ -80,8 +80,11 @@ for idx, row in tqdm(desert_zips.iterrows(), total=num_deserts, desc='Finding cl
 if results:
     desert_zips = desert_zips.copy()
     desert_zips[['closest_provider_ccn', 'closest_provider_distance']] = pd.DataFrame(results, index=desert_zips.index)
+    # Merge back to pen using the same index as desert_zips (which is a subset of pen)
+    pen.loc[desert_zips.index, 'closest_provider_ccn'] = desert_zips['closest_provider_ccn']
+    pen.loc[desert_zips.index, 'closest_provider_distance'] = desert_zips['closest_provider_distance']
     # Merge back to pen
-    pen = pen.merge(desert_zips[['ZIP CODE', 'closest_provider_ccn', 'closest_provider_distance']], on='ZIP CODE', how='left')
+    #pen = pen.merge(desert_zips[['FIPS', 'closest_provider_ccn', 'closest_provider_distance']], on='FIPS', how='left')
 
 # Save results
 pen.to_csv(output_csv, index=False)
