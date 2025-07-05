@@ -54,6 +54,9 @@ if __name__ == "__main__":
     # 11. Merge final lat/lon to master provider
     run_script('merge_final_latlon_to_master.py')
 
+    # 12. Merge final lat/lon to master provider
+    run_script('find_hh_coverage_deserts.py')
+
     print("\nAll data processing steps completed.")
 
    
