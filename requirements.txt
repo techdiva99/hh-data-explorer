@@ -1,3 +1,6 @@
+streamlit
+plotly>=5.20.0
+requests
 # For network analysis and advanced graph layout
 scipy
 # For network analysis and visualization
@@ -10,4 +13,3 @@ python-dotenv
 pandas
 openpyxl
 geopy
-requests
