@@ -26,7 +26,7 @@ pen = robust_read_csv(penetration_csv)
 if 'FIPS_COUNTY' not in master.columns:
     raise ValueError('FIPS_COUNTY column not found in masterprovider_from_enrollment.csv')
 if 'FIPS' not in pen.columns:
-    raise ValueError('FIPS column not found in State_County_Penetration_MA_2025_06.csv')
+    raise ValueError('FIPS column not found in State_County_Penetration_MA_.csv')
 
 # Merge on FIPS_COUNTY (master) and FIPS (penetration)
 merged = pd.merge(master, pen[['FIPS','Eligibles','Enrolled','Penetration']], left_on='FIPS_COUNTY', right_on='FIPS', how='left')

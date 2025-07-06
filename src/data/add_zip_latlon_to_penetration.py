@@ -21,7 +21,7 @@ if not os.path.exists(zip_latlon_xlsx):
     raise FileNotFoundError(f"Expected ZIP geolocation file not found: {zip_latlon_xlsx}")
 
 # Output for penetration file
-output_csv = os.path.join(project_root, 'data/processed/State_County_Penetration_MA_2025_06_latlon.csv')
+output_csv = os.path.join(project_root, 'data/processed/State_County_Penetration_MA_latlon.csv')
 # Output for masterprovider_with_penetration
 masterprov_csv = os.path.join(project_root, 'data/processed/masterprovider_with_penetration.csv')
 masterprov_latlon_csv = os.path.join(project_root, 'data/processed/masterprovider_with_penetration_latlon.csv')
