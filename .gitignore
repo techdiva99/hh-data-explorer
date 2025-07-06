@@ -1,4 +1,61 @@
 
-src/data/cms_homehealth.db
-data/processed/*
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
 .env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Database files
+src/data/cms_homehealth.db
+
+# Local secrets
+.streamlit/secrets.toml
+*.log
+
+# Keep processed data for deployment but exclude large files
+data/processed/provider_networks.json
+data/processed/provider_networks_flat.csv
+data/processed/master_provider_for_review.csv
+data/processed/masterprovider_from_enrollment.csv
+data/processed/masterprovider_with_penetration.csv
+data/processed/provider_cbsa_enriched.csv
+# data/processed/* (commented out to keep essential data for Streamlit deployment)
