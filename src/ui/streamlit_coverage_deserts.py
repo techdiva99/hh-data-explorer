@@ -255,3 +255,10 @@ st.plotly_chart(fig, use_container_width=True)
 # --- Show filtered data table below map ---
 with st.expander('Show Filtered Data Table'):
     st.dataframe(filtered_deserts.astype(str), use_container_width=True)
+
+def main():
+    """Main function for deployment compatibility"""
+    pass  # All the code above already runs when this module is imported
+
+if __name__ == "__main__":
+    main()

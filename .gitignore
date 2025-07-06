@@ -1,2 +1,4 @@
 
 src/data/cms_homehealth.db
+data/processed/*
+.env
