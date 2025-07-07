@@ -32,10 +32,10 @@ BRAND_COLORS = {
     'success': '#4CAF50'
 }
 
-# Custom CSS for styling
+# Custom CSS for styling - Cache cleared 2025-07-07
 st.markdown(f"""
 <style>
-    /* Force light theme */
+    /* Force light theme - Cache cleared */
     .stApp {{
         background-color: {BRAND_COLORS['white']};
         color: #000000;

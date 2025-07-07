@@ -55,34 +55,36 @@ def render_dashboard_tab():
         st.error(f"Error loading dashboard data: {e}")
         return
 
-    # Embedded dashboard controls
-    with st.expander("**Dashboard Settings**", expanded=False):
-        control_col1, control_col2 = st.columns(2)
-        
-        with control_col1:
-            view_type = st.selectbox(
-                'Dashboard View',
-                ['Executive Summary', 'Geographic Overview', 'Quality Insights', 'Market Trends']
+    # Dashboard sub-tabs
+    dashboard_tab1, dashboard_tab2, dashboard_tab3, dashboard_tab4 = st.tabs([
+        "Executive Summary", 
+        "Geographic Overview", 
+        "Quality Insights", 
+        "Market Trends"
+    ])
+    
+    # State filter (common to all sub-tabs)
+    with st.expander("**Filter Options**", expanded=False):
+        if providers is not None and 'STATE' in providers.columns:
+            states = sorted(providers['STATE'].dropna().unique())
+            selected_states = st.multiselect(
+                'Focus States (optional)',
+                states,
+                help="Leave empty to show national data"
             )
-        
-        with control_col2:
-            if providers is not None and 'STATE' in providers.columns:
-                states = sorted(providers['STATE'].dropna().unique())
-                selected_states = st.multiselect(
-                    'Focus States (optional)',
-                    states,
-                    help="Leave empty to show national data"
-                )
-            else:
-                selected_states = []
+        else:
+            selected_states = []
 
-    if view_type == 'Executive Summary':
+    with dashboard_tab1:
         render_executive_summary(providers, deserts, penetration, selected_states)
-    elif view_type == 'Geographic Overview':
+    
+    with dashboard_tab2:
         render_geographic_overview(providers, deserts, penetration, selected_states)
-    elif view_type == 'Quality Insights':
+    
+    with dashboard_tab3:
         render_quality_insights(providers, selected_states)
-    elif view_type == 'Market Trends':
+    
+    with dashboard_tab4:
         render_market_trends(providers, penetration, selected_states)
 
 def render_executive_summary(providers, deserts, penetration, selected_states):
