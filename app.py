@@ -7,6 +7,24 @@ This file is required for Streamlit Community Cloud deployment.
 import streamlit as st
 import os
 
+# Load environment variables
+try:
+    from dotenv import load_dotenv
+    load_dotenv()  # Load .env file if it exists
+except ImportError:
+    pass  # python-dotenv not installed, use system env vars
+
+# Import configuration
+from src.config import config_manager
+
+# Check if AI features are enabled
+ai_components = None
+try:
+    from src.ai import get_ai_components
+    ai_components = get_ai_components()
+except ImportError:
+    ai_components = {'enabled': False, 'error': 'AI module not available'}
+
 # Set Streamlit page config for wide layout
 st.set_page_config(
     page_title='Home Health Provider Network Explorer',
@@ -144,16 +162,28 @@ else:
     </div>
     ''', unsafe_allow_html=True)
 
-# Create tabs
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
+# Create tabs - conditionally include AI Assistant
+tab_names = [
     "Dashboard", 
     "🔍 Find a Provider", 
     "Coverage Deserts", 
     "🏢 Provider Networks", 
     "⭐ Quality Metrics", 
-    "Market Analysis", 
-    "About"
-])
+    "Market Analysis"
+]
+
+# Add AI Assistant tab if enabled
+if ai_components and ai_components.get('enabled', False):
+    tab_names.append("🤖 AI Assistant")
+
+# Always include About tab last
+tab_names.append("About")
+
+# Create tabs dynamically
+tabs = st.tabs(tab_names)
+
+# Map tabs to indices
+tab_indices = {name: i for i, name in enumerate(tab_names)}
 
 # Import tab modules
 from src.ui.dashboard_tab import render_dashboard_tab
@@ -164,26 +194,34 @@ from src.ui.quality_metrics_tab import render_quality_metrics_tab
 from src.ui.market_analysis_tab import render_market_analysis_tab
 from src.ui.about_tab import render_about_tab
 
-# Render content based on selected tab
-with tab1:
+# Render content based on tabs
+with tabs[tab_indices["Dashboard"]]:
     render_dashboard_tab()
 
-with tab2:
+with tabs[tab_indices["🔍 Find a Provider"]]:
     render_find_provider_tab()
 
-with tab3:
+with tabs[tab_indices["Coverage Deserts"]]:
     render_coverage_deserts_tab()
 
-with tab4:
+with tabs[tab_indices["🏢 Provider Networks"]]:
     render_provider_networks_tab()
 
-with tab5:
+with tabs[tab_indices["⭐ Quality Metrics"]]:
     render_quality_metrics_tab()
 
-with tab6:
+with tabs[tab_indices["Market Analysis"]]:
     render_market_analysis_tab()
 
-with tab7:
+# Render AI Assistant tab if enabled
+if "🤖 AI Assistant" in tab_indices and ai_components and ai_components.get('enabled', False):
+    with tabs[tab_indices["🤖 AI Assistant"]]:
+        if ai_components.get('chat_interface'):
+            ai_components['chat_interface']()
+        else:
+            st.error("AI Assistant is enabled but interface not available.")
+
+with tabs[tab_indices["About"]]:
     render_about_tab()
 
 # Footer
