@@ -24,10 +24,10 @@ def render_about_tab():
     """Render the About tab content."""
     
     st.markdown('''
-    ### About the Home Health Finder & Market Explorer
+    ### About the Home Health Provider Network Explorer
     
-    This comprehensive platform provides deep insights into the US home health industry through 
-    interactive analysis of coverage patterns, quality metrics, provider networks, and market opportunities.
+    An AI-powered analytics platform that delivers comprehensive insights into the US home health industry through 
+    interactive analysis of provider networks, coverage patterns, quality metrics, and market intelligence.
     ''')
 
     # Create subtabs for About sections
@@ -63,9 +63,9 @@ def render_project_overview():
     <div style="background-color: {BRAND_COLORS['accent_blue']}; padding: 20px; border-radius: 10px; margin: 20px 0;">
         <h4 style="color: {BRAND_COLORS['dark_blue']}; margin-top: 0;">Mission Statement</h4>
         <p style="color: {BRAND_COLORS['dark_blue']}; margin-bottom: 0;">
-            To provide comprehensive analysis and visualization tools for understanding home health service 
-            accessibility, quality, and market dynamics across the United States, enabling data-driven 
-            decision making for healthcare providers, policymakers, researchers, and consumers.
+            To provide AI-powered analytics and visualization tools for understanding home health provider networks, 
+            service accessibility, quality performance, and market dynamics across the United States, enabling 
+            data-driven decision making for healthcare providers, policymakers, researchers, and consumers.
         </p>
     </div>
     ''', unsafe_allow_html=True)
@@ -76,34 +76,34 @@ def render_project_overview():
     audiences = [
         {
             "audience": "🏠 Consumers & Families",
-            "description": "Find and compare home health providers in your area",
+            "description": "Find and compare home health providers in your area with AI assistance",
             "use_cases": [
-                "Search for nearby home health agencies",
-                "Compare provider quality ratings (HHCAHPS scores)",
-                "View patient satisfaction scores and reviews",
-                "Find contact information and get directions"
+                "Search for nearby home health agencies with intelligent filtering",
+                "Compare provider quality ratings (HHCAHPS scores) with AI insights",
+                "View patient satisfaction scores and performance analytics",
+                "Get AI-powered provider recommendations based on your needs"
             ],
             "primary_tabs": ["Find a Provider", "Quality Metrics"]
         },
         {
-            "audience": "Healthcare Organizations", 
-            "description": "Strategic planning and competitive intelligence",
+            "audience": "🏥 Healthcare Organizations", 
+            "description": "Strategic planning and competitive intelligence with AI-driven market analysis",
             "use_cases": [
-                "Market opportunity assessment and expansion planning",
-                "Competitive analysis and benchmarking",
-                "Network optimization and partnership opportunities",
-                "Quality performance comparison with peers"
+                "AI-powered market opportunity assessment and expansion planning",
+                "Competitive analysis and benchmarking with network intelligence",
+                "Network optimization and partnership opportunities discovery",
+                "Quality performance comparison with AI-generated insights"
             ],
             "primary_tabs": ["Market Analysis", "Provider Networks", "Dashboard"]
         },
         {
-            "audience": "Policymakers & Regulators",
-            "description": "Healthcare access and policy development",
+            "audience": "🏛️ Policymakers & Regulators",
+            "description": "Healthcare access analysis and policy development with AI analytics",
             "use_cases": [
-                "Identify coverage gaps and healthcare deserts",
-                "Monitor quality performance across regions",
-                "Evaluate Medicare Advantage market penetration",
-                "Support resource allocation decisions"
+                "AI-assisted identification of coverage gaps and healthcare deserts",
+                "Monitor quality performance across regions with predictive insights",
+                "Evaluate Medicare Advantage market penetration trends",
+                "Support resource allocation decisions with data-driven recommendations"
             ],
             "primary_tabs": ["Coverage Deserts", "Quality Metrics", "Dashboard"]
         },
@@ -120,12 +120,12 @@ def render_project_overview():
         },
         {
             "audience": "💼 Healthcare Consultants",
-            "description": "Client advisory and strategic consulting",
+            "description": "Client advisory and strategic consulting with AI-powered market intelligence",
             "use_cases": [
-                "Develop market entry strategies for clients",
-                "Perform due diligence for acquisitions",
-                "Benchmark client performance against markets",
-                "Identify partnership and network opportunities"
+                "Develop AI-informed market entry strategies for clients",
+                "Perform due diligence for acquisitions with network analytics",
+                "Benchmark client performance against markets using AI insights",
+                "Identify partnership and network opportunities with predictive analysis"
             ],
             "primary_tabs": ["Market Analysis", "Provider Networks", "Quality Metrics"]
         }
@@ -148,10 +148,10 @@ def render_project_overview():
         <div style="background-color: {BRAND_COLORS['accent_green']}; padding: 15px; border-radius: 8px;">
             <h5 style="color: {BRAND_COLORS['dark_green']}; margin-top: 0;">Getting Started (Consumers)</h5>
             <ol style="color: {BRAND_COLORS['dark_green']};">
-                <li><strong>Start with "Find a Provider"</strong> - Enter your location to find nearby agencies</li>
-                <li><strong>Review quality ratings</strong> - Compare HHCAHPS scores and patient satisfaction</li>
+                <li><strong>Start with "Find a Provider"</strong> - Enter your location to find nearby agencies with AI filtering</li>
+                <li><strong>Review quality ratings</strong> - Compare HHCAHPS scores with AI-powered insights</li>
                 <li><strong>Check coverage areas</strong> - Use "Coverage Deserts" to understand service availability</li>
-                <li><strong>Get contact info</strong> - Call providers directly or get directions</li>
+                <li><strong>Get AI recommendations</strong> - Receive personalized provider suggestions based on your criteria</li>
             </ol>
         </div>
         ''', unsafe_allow_html=True)
@@ -161,10 +161,10 @@ def render_project_overview():
         <div style="background-color: {BRAND_COLORS['light_gray']}; padding: 15px; border-radius: 8px;">
             <h5 style="color: {BRAND_COLORS['dark_blue']}; margin-top: 0;">Getting Started (Business Users)</h5>
             <ol style="color: {BRAND_COLORS['dark_blue']};">
-                <li><strong>Review the Dashboard</strong> - Get overview of key market insights</li>
-                <li><strong>Analyze market opportunities</strong> - Use "Market Analysis" for penetration data</li>
-                <li><strong>Study provider networks</strong> - Understand competitive landscape</li>
-                <li><strong>Benchmark quality</strong> - Compare performance metrics</li>
+                <li><strong>Review the Dashboard</strong> - Get AI-powered overview of key market insights</li>
+                <li><strong>Analyze market opportunities</strong> - Use "Market Analysis" for AI-driven penetration analysis</li>
+                <li><strong>Study provider networks</strong> - Understand competitive landscape with network intelligence</li>
+                <li><strong>Benchmark quality</strong> - Compare performance metrics with AI-generated insights</li>
             </ol>
         </div>
         ''', unsafe_allow_html=True)
@@ -177,12 +177,13 @@ def render_project_overview():
     with effectiveness_col1:
         st.markdown("**Strengths**")
         strengths = [
-            "**Comprehensive data integration** - Multiple authoritative sources (CMS, NBER, HUD)",
-            "**Multi-audience design** - Serves consumers, businesses, and researchers",
-            "**Interactive visualizations** - Maps, charts, and filtering capabilities", 
-            "**Real-time analysis** - Dynamic filtering and exploration",
-            "**Geographic focus** - County-level granularity across the US",
-            "**Quality emphasis** - Patient satisfaction and performance metrics"
+            "**AI-powered analytics** - Intelligent insights and automated analysis across all data sources",
+            "**Comprehensive data integration** - Multiple authoritative sources (CMS, NBER, HUD) with AI processing",
+            "**Multi-audience design** - Serves consumers, businesses, and researchers with tailored AI assistance",
+            "**Interactive visualizations** - Maps, charts, and filtering capabilities with intelligent recommendations", 
+            "**Real-time analysis** - Dynamic filtering and exploration with AI-driven insights",
+            "**Geographic focus** - County-level granularity across the US with network intelligence",
+            "**Quality emphasis** - Patient satisfaction and performance metrics with predictive analytics"
         ]
         for strength in strengths:
             st.markdown(f"• {strength}")
@@ -190,12 +191,12 @@ def render_project_overview():
     with effectiveness_col2:
         st.markdown("**Areas for Enhancement**")
         improvements = [
-            "**Real-time data updates** - Currently uses quarterly/annual data",
-            "**Provider contact integration** - Direct booking and communication features",
-            "**Mobile optimization** - Enhanced mobile-friendly interface",
-            "**Predictive analytics** - Forecasting market trends and opportunities",
-            "**User personalization** - Saved searches and custom dashboards",
-            "**API access** - Programmatic access for developers"
+            "**Enhanced AI capabilities** - Advanced machine learning models for predictive analytics",
+            "**Real-time data updates** - Currently uses quarterly/annual data, moving toward real-time feeds",
+            "**Provider contact integration** - Direct booking and communication features with AI scheduling",
+            "**Mobile optimization** - Enhanced mobile-friendly interface with voice AI assistance",
+            "**Personalized recommendations** - AI-driven provider matching based on individual needs",
+            "**API access** - Programmatic access for developers with AI-powered endpoints"
         ]
         for improvement in improvements:
             st.markdown(f"• {improvement}")
@@ -203,13 +204,13 @@ def render_project_overview():
     # Value proposition
     st.markdown(f'''
     <div style="background-color: {BRAND_COLORS['primary_blue']}; color: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
-        <h4 style="margin-top: 0; color: white;">💡 Why This Tool Matters</h4>
+        <h4 style="margin-top: 0; color: white;">💡 Why This AI-Powered Tool Matters</h4>
         <p style="margin-bottom: 0;">
             Home health services are critical for aging populations and patients with chronic conditions. 
-            This tool democratizes access to complex healthcare data, enabling better decisions for 
+            This AI-powered platform democratizes access to complex healthcare data, enabling smarter decisions for 
             individuals seeking care and organizations planning services. By combining multiple data 
-            sources into an intuitive interface, we bridge the gap between raw government data and 
-            actionable insights.
+            sources with intelligent analytics, we bridge the gap between raw government data and 
+            actionable insights through artificial intelligence.
         </p>
     </div>
     ''', unsafe_allow_html=True)
@@ -219,45 +220,46 @@ def render_project_overview():
     with col1:
         st.markdown("#### Key Objectives")
         st.markdown("""
-        - **Identify Coverage Deserts**: Map areas with limited home health access
-        - **Analyze Quality Metrics**: Evaluate provider performance using CMS data
-        - **Network Analysis**: Understand organizational structures and relationships
-        - **Market Intelligence**: Assess penetration rates and business opportunities
-        - **Geographic Insights**: Visualize patterns across counties, states, and regions
+        - **AI-Driven Provider Networks**: Map and analyze organizational structures with intelligent insights
+        - **Coverage Desert Analysis**: AI-powered identification of areas with limited home health access
+        - **Quality Performance Analytics**: Evaluate provider performance using AI-enhanced CMS data analysis
+        - **Market Intelligence**: AI-assisted assessment of penetration rates and business opportunities
+        - **Geographic Insights**: Visualize patterns across counties, states, and regions with predictive modeling
         """)
 
     with col2:
         st.markdown("#### Key Features")
         st.markdown("""
-        - **Interactive Maps**: County-level visualization with FIPS lookup
-        - **Quality Dashboards**: HHCAHPS scores and performance comparisons
-        - **Provider Networks**: Organizational analysis and geographic distribution
-        - **Market Analysis**: Penetration rates, cost data, and opportunity assessment
-        - **Real-time Filtering**: Dynamic data exploration across all modules
+        - **AI-Powered Analytics**: Intelligent insights and automated analysis across all datasets
+        - **Interactive Maps**: County-level visualization with FIPS lookup and smart recommendations
+        - **Quality Dashboards**: HHCAHPS scores and AI-enhanced performance comparisons
+        - **Provider Network Intelligence**: AI-driven organizational analysis and geographic distribution
+        - **Market Analysis**: AI-assisted penetration rates, cost data, and opportunity assessment
+        - **Real-time Filtering**: Dynamic data exploration with intelligent suggestions across all modules
         """)
 
     st.markdown("#### Analysis Capabilities")
     
     capabilities = [
         {
-            "title": "Coverage Desert Analysis",
-            "description": "Identifies counties with insufficient home health provider coverage based on Medicare enrollment and provider density",
-            "data_sources": "Provider enrollment, geographic data, Medicare penetration"
+            "title": "AI-Enhanced Coverage Desert Analysis",
+            "description": "Uses machine learning to identify counties with insufficient home health provider coverage based on Medicare enrollment, provider density, and demographic factors",
+            "data_sources": "Provider enrollment, geographic data, Medicare penetration, AI predictive models"
         },
         {
-            "title": "Quality Performance Tracking", 
-            "description": "Analyzes HHCAHPS patient satisfaction scores and CMS quality measures across providers and states",
-            "data_sources": "CMS quality data, HHCAHPS surveys, provider characteristics"
+            "title": "AI-Powered Quality Performance Tracking", 
+            "description": "Analyzes HHCAHPS patient satisfaction scores and CMS quality measures with AI insights to identify trends and performance patterns",
+            "data_sources": "CMS quality data, HHCAHPS surveys, provider characteristics, AI analytics engine"
         },
         {
-            "title": "Network Mapping",
-            "description": "Maps organizational relationships and geographic presence of home health networks",
-            "data_sources": "Provider enrollment data, organizational hierarchies"
+            "title": "Intelligent Network Mapping",
+            "description": "Uses AI algorithms to map organizational relationships, geographic presence, and network optimization opportunities for home health providers",
+            "data_sources": "Provider enrollment data, organizational hierarchies, AI network analysis"
         },
         {
-            "title": "Market Opportunity Assessment",
-            "description": "Combines penetration rates, demographics, and provider data to identify expansion opportunities",
-            "data_sources": "Medicare Advantage penetration, cost reports, enrollment data"
+            "title": "AI-Driven Market Opportunity Assessment",
+            "description": "Combines penetration rates, demographics, and provider data with AI modeling to identify and rank expansion opportunities",
+            "data_sources": "Medicare Advantage penetration, cost reports, enrollment data, AI market intelligence"
         }
     ]
 
@@ -272,8 +274,8 @@ def render_data_sources():
     st.subheader("Data Sources")
     
     st.markdown("""
-    This platform integrates data from multiple authoritative sources to provide comprehensive 
-    home health industry analysis.
+    This AI-powered platform integrates data from multiple authoritative sources to provide comprehensive 
+    home health industry analysis with intelligent insights and automated analytics.
     """)
 
     # Primary data sources from README
@@ -351,13 +353,14 @@ def render_data_sources():
                 else:
                     st.success("Current/recent data")
 
-    st.markdown("#### 🔄 Data Integration Process")
+    st.markdown("#### 🔄 AI-Enhanced Data Integration Process")
     st.markdown("""
-    1. **Master Provider Directory**: Created comprehensive provider database with quality metrics
-    2. **Geographic Enrichment**: Added CBSA and county information to all provider records
-    3. **Coverage Analysis**: Analyzed ZIP codes and counties for Medicare enrollment vs provider presence
-    4. **Desert Identification**: Mapped home health coverage deserts and nearest high-quality providers
-    5. **Quality Integration**: Merged provider characteristics with CMS quality performance data
+    1. **Master Provider Directory**: Created comprehensive provider database with AI-enhanced quality metrics
+    2. **Geographic Enrichment**: Added CBSA and county information with intelligent location matching
+    3. **Coverage Analysis**: AI-powered analysis of ZIP codes and counties for Medicare enrollment vs provider presence
+    4. **Desert Identification**: Machine learning algorithms map coverage deserts and recommend nearest high-quality providers
+    5. **Quality Integration**: AI-enhanced merging of provider characteristics with CMS quality performance data
+    6. **Network Intelligence**: AI algorithms identify organizational relationships and network patterns
     """)
 
 def render_data_catalog():
@@ -470,11 +473,12 @@ def render_technical_documentation():
         st.markdown("""
         **Frontend Framework**
         - Streamlit for interactive web interface
-        - Plotly for data visualization
+        - Plotly for data visualization with AI insights
         - Custom CSS for branding and styling
         
-        **Data Processing**
+        **AI & Data Processing**
         - Pandas for data manipulation
+        - AI/ML libraries for intelligent analytics
         - GeoPy for geocoding operations
         - NumPy for numerical computations
         """)
@@ -482,14 +486,14 @@ def render_technical_documentation():
     with col2:
         st.markdown("""
         **Application Structure**
-        - Modular tab-based architecture
-        - Separate modules for each analysis type
+        - Modular tab-based architecture with AI integration
+        - Separate modules for each analysis type with intelligent features
         - Shared utilities and styling components
         
-        **Data Pipeline**
+        **AI-Powered Data Pipeline**
         - Automated data loading and validation
-        - Geographic enrichment processes
-        - Quality metric integration
+        - Geographic enrichment processes with ML
+        - Quality metric integration with AI insights
         """)
 
     # File structure
@@ -578,11 +582,11 @@ streamlit run app.py
     with st.expander("Data Processing Workflow"):
         st.markdown("""
         1. **Data Acquisition**: Download datasets from CMS and other sources
-        2. **Geographic Enrichment**: Add CBSA, county, and coordinate information
-        3. **Quality Integration**: Merge provider data with quality metrics
-        4. **Coverage Analysis**: Identify service gaps and coverage deserts
-        5. **Network Analysis**: Map organizational relationships and hierarchies
-        6. **Visualization**: Generate interactive maps and analytical dashboards
+        2. **AI-Enhanced Geographic Enrichment**: Add CBSA, county, and coordinate information with intelligent matching
+        3. **Quality Integration**: Merge provider data with quality metrics using AI analytics
+        4. **Coverage Analysis**: Identify service gaps and coverage deserts using machine learning
+        5. **Network Analysis**: Map organizational relationships and hierarchies with AI algorithms
+        6. **Visualization**: Generate interactive maps and AI-powered analytical dashboards
         """)
 
 def render_contact_information():
@@ -626,12 +630,13 @@ def render_contact_information():
     current_date = datetime.now().strftime("%Y-%m-%d")
     
     app_info = [
-        {"Property": "Application Name", "Value": "Home Health Data Explorer"},
+        {"Property": "Application Name", "Value": "Home Health Provider Network Explorer"},
         {"Property": "Version", "Value": "2.0.0"},
         {"Property": "Build Date", "Value": current_date},
-        {"Property": "Framework", "Value": "Streamlit"},
+        {"Property": "Framework", "Value": "Streamlit with AI Analytics"},
         {"Property": "Data Sources", "Value": "CMS, NBER, HUD, SimpleMaps"},
-        {"Property": "Geographic Coverage", "Value": "United States (County-level)"}
+        {"Property": "Geographic Coverage", "Value": "United States (County-level)"},
+        {"Property": "AI Features", "Value": "Network Intelligence, Predictive Analytics, Smart Recommendations"}
     ]
     
     st.dataframe(app_info, use_container_width=True, hide_index=True)
@@ -639,10 +644,11 @@ def render_contact_information():
     # Acknowledgments
     st.markdown("#### 🙏 Acknowledgments")
     st.markdown("""
-    This application was built using data from the Centers for Medicare & Medicaid Services (CMS), 
+    This AI-powered application was built using data from the Centers for Medicare & Medicaid Services (CMS), 
     the National Bureau of Economic Research (NBER), the Department of Housing and Urban Development (HUD), 
     and other authoritative sources. We acknowledge the efforts of these organizations in making 
-    healthcare data publicly available for research and analysis.
+    healthcare data publicly available for research and analysis. Our AI algorithms enhance this data 
+    to provide intelligent insights and automated analytics for better decision-making.
     """)
     
     st.markdown("---")

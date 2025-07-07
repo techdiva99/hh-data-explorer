@@ -9,7 +9,7 @@ import os
 
 # Set Streamlit page config for wide layout
 st.set_page_config(
-    page_title='Home Health Finder & Market Explorer',
+    page_title='Home Health Provider Network Explorer',
     layout='wide',
     page_icon=None,
     initial_sidebar_state="collapsed"
@@ -60,6 +60,13 @@ st.markdown(f"""
         margin: 0;
         font-size: 2.5rem;
         font-weight: 600;
+    }}
+    
+    .subheading {{
+        color: {BRAND_COLORS['accent_blue']};
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-top: 5px;
     }}
     
     /* Tab styling */
@@ -117,13 +124,25 @@ st.markdown(f"""
 # Header with logo
 LOGO_PATH = os.path.join(os.path.dirname(__file__), 'assets', 'img', 'logo.png')
 if os.path.exists(LOGO_PATH):
+    # Create header with logo inside the blue background
     col1, col2 = st.columns([1, 8])
     with col1:
-        st.image(LOGO_PATH, width=80)
+        st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+        st.image(LOGO_PATH, width=120)
     with col2:
-        st.markdown('<div class="main-header"><h1>Home Health Finder & Market Explorer</h1></div>', unsafe_allow_html=True)
+        st.markdown('''
+        <div class="main-header" style="margin-left: -50px;">
+            <h1>Home Health Provider Network Explorer</h1>
+            <div class="subheading">AI-Powered Market Intelligence Bot</div>
+        </div>
+        ''', unsafe_allow_html=True)
 else:
-    st.markdown('<div class="main-header"><h1>Home Health Finder & Market Explorer</h1></div>', unsafe_allow_html=True)
+    st.markdown('''
+    <div class="main-header">
+        <h1>Home Health Provider Network Explorer</h1>
+        <div class="subheading">AI-Powered Market Intelligence Bot</div>
+    </div>
+    ''', unsafe_allow_html=True)
 
 # Create tabs
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
