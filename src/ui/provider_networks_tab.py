@@ -222,7 +222,7 @@ def render_geographic_distribution(providers):
                 color='PRACTICE LOCATION TYPE' if 'PRACTICE LOCATION TYPE' in providers_map.columns else None,
                 zoom=3,
                 center={'lat': 37.8, 'lon': -96},
-                map_style='carto-positron',
+                mapbox_style='carto-positron',
                 title="Home Health Provider Locations"
             )
             fig.update_layout(height=600)
@@ -317,9 +317,48 @@ def render_network_connections(providers, networks_data, networks_flat):
     if networks_data:
         st.success("Network data available - showing detailed analysis")
         
-        # Network statistics
-        num_networks = len(networks_data)
-        total_connections = sum(len(network.get('members', [])) for network in networks_data.values())
+        # Handle both dictionary and list formats
+        if isinstance(networks_data, dict):
+            # Network statistics for dictionary format
+            num_networks = len(networks_data)
+            
+            # Calculate connections safely for dictionary format
+            total_connections = 0
+            network_sizes = []
+            
+            for network in networks_data.values():
+                if isinstance(network, dict) and 'members' in network:
+                    size = len(network['members'])
+                elif isinstance(network, list):
+                    size = len(network)
+                else:
+                    size = 1
+                
+                total_connections += size
+                network_sizes.append(size)
+        
+        elif isinstance(networks_data, list):
+            # Network statistics for list format
+            num_networks = len(networks_data)
+            
+            # Calculate connections safely for list format
+            total_connections = 0
+            network_sizes = []
+            
+            for network in networks_data:
+                if isinstance(network, dict) and 'members' in network:
+                    size = len(network['members'])
+                elif isinstance(network, list):
+                    size = len(network)
+                else:
+                    size = 1
+                
+                total_connections += size
+                network_sizes.append(size)
+        
+        else:
+            st.error("Unexpected network data format")
+            return
         
         col1, col2, col3 = st.columns(3)
         with col1:
@@ -330,8 +369,7 @@ def render_network_connections(providers, networks_data, networks_flat):
             avg_size = total_connections / num_networks if num_networks > 0 else 0
             st.metric("Average Network Size", f"{avg_size:.1f}")
         
-        # Network size distribution
-        network_sizes = [len(network.get('members', [])) for network in networks_data.values()]
+        # Network size distribution chart
         if network_sizes:
             fig = px.histogram(
                 x=network_sizes,

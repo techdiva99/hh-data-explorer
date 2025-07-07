@@ -8,7 +8,7 @@ from datetime import datetime
 
 # --- BRAND COLORS ---
 BRAND_COLORS = {
-    'primary_blue        with st.expander("**HHCAHPS Measure Selection & Filters**", expanded=True):: '#00B4D8',
+    'primary_blue': '#00B4D8',
     'primary_green': '#7CB342',
     'secondary_blue': '#0077BE',
     'secondary_green': '#4CAF50',

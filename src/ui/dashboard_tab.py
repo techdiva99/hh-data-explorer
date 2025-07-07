@@ -147,23 +147,6 @@ def render_executive_summary(providers, deserts, penetration, selected_states):
         </div>
         ''', unsafe_allow_html=True)
 
-    # Quick access tools
-    st.markdown("#### 🚀 Quick Access Tools")
-    
-    tool_col1, tool_col2, tool_col3 = st.columns(3)
-    
-    with tool_col1:
-        if st.button("🔍 Find a Provider", use_container_width=True):
-            st.info("Switch to the 'Find a Provider' tab to search for home health agencies in your area.")
-    
-    with tool_col2:
-        if st.button("🗺️ View Coverage Map", use_container_width=True):
-            st.info("Switch to the 'Coverage Deserts' tab to explore geographic coverage patterns.")
-    
-    with tool_col3:
-        if st.button("⭐ Compare Quality", use_container_width=True):
-            st.info("Switch to the 'Quality Metrics' tab to analyze provider performance.")
-
     # Recent data updates
     st.markdown("#### 📅 Data Freshness")
     
